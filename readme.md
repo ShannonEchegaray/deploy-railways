@@ -11,7 +11,7 @@ git clone https://github.com/ShannonEchegaray/Desarollo-Backend---Shannon-Echega
 - A continuacion, ya descargado ejecutar los siguiente comando desde la carpeta "Desarrollo-Backend---Shannon-Echegaray"
 
 ```
-git checkout desafio-13
+git checkout desafio-15
 npm install
 ```
 
