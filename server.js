@@ -124,8 +124,8 @@ app.use((error, req, res, next) => {
 const server = http.createServer(app);
 initServer(server);
 
-server.listen(process.env.PORT, function() {
-  console.log("Your app is listening on " + `${process.env.NODE_URL}:${PORT}/`);
+server.listen(+process.env.PORT, function() {
+  console.log("Your app is listening on " + `${process.env.NODE_URL}:${process.env.PORT}/`);
   console.log("Environment: " + process.env.NODE_ENV);
 })
 
