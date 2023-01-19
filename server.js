@@ -18,17 +18,6 @@ import { Strategy as LocalStrategy } from "passport-local";
 import UserModel from "./models/user.js";
 import { encryptPassword, isValidPassword } from "./utils.js";
 
-const params = minimist(process.argv.slice(2), {
-  alias : {
-    p: "PORT",
-    m: "MODE"
-  },
-  default: {
-    p: 8080,
-    m: "fork"
-  }
-});
-
 const {PORT, MODE} = params
 
 if(MODE === "cluster" && cluster.isPrimary){  
