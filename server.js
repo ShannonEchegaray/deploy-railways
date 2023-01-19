@@ -18,7 +18,7 @@ import { Strategy as LocalStrategy } from "passport-local";
 import UserModel from "./models/user.js";
 import { encryptPassword, isValidPassword } from "./utils.js";
 
-const {PORT, MODE} = params
+const MODE = "fork";
 
 if(MODE === "cluster" && cluster.isPrimary){  
   const length = os.cpus().length;
@@ -124,7 +124,7 @@ app.use((error, req, res, next) => {
 const server = http.createServer(app);
 initServer(server);
 
-server.listen(PORT, function() {
+server.listen(process.env.PORT, function() {
   console.log("Your app is listening on " + `${process.env.NODE_URL}:${PORT}/`);
   console.log("Environment: " + process.env.NODE_ENV);
 })
